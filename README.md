@@ -28,7 +28,7 @@ BBTracer is a [frida](https://frida.re/) (Dynamic Binary Instrumentation framewo
 
 ### Apply Trace: 
 
-I wrote an IDC script [IDA_apply_bbtrace.idc](IDA_script_to_apply_bbtrace\IDA_apply_bbtrace.idc) to export the basic block trace into IDA. Since the script is written in .idc (IDC is embedded in IDA core), it can be used in IDA Free also.
+I wrote an IDC script [IDA_apply_bbtrace.idc](IDA_script_to_apply_bbtrace/IDA_apply_bbtrace.idc) to export the basic block trace into IDA. Since the script is written in .idc (IDC is embedded in IDA core), it can be used in IDA Free also.
 
 1. Open the program you want to view the trace for in IDA Free or IDA Pro. 
 2. Once the program is loaded, select `File -> Script file... -> IDA_apply_bbtrace.idc`
@@ -94,9 +94,9 @@ Lighthouse is a nice code coverage plugin for IDA Pro. Plugins with GUI are not 
 
 Lighthouse has nice feature to compare and contrast multiple coverage logs. Look at the [Coverage Shell](https://github.com/gaasedelen/lighthouse#coverage-shell) section for more info.
 
-As per Lighthouse, it supports multiple coverage formats, unfortunately none of them worked for me as my `.log` format is different from [other coverage formats](https://github.com/gaasedelen/lighthouse/tree/master/coverage#other-coverage-formats) mentioned. The format closer to my requirement was [modoff](https://github.com/gaasedelen/lighthouse/tree/master/coverage#module--offset-modoff) but it was coloring only the first line of the basic block. So, I wrote a new parser ([bbtparser.py](custom_parser_for_lighthouse\bbtparser.py)) to support my custom `.log` format.
+As per Lighthouse, it supports multiple coverage formats, unfortunately none of them worked for me as my `.log` format is different from [other coverage formats](https://github.com/gaasedelen/lighthouse/tree/master/coverage#other-coverage-formats) mentioned. The format closer to my requirement was [modoff](https://github.com/gaasedelen/lighthouse/tree/master/coverage#module--offset-modoff) but it was coloring only the first line of the basic block. So, I wrote a new parser ([bbtparser.py](custom_parser_for_lighthouse/bbtparser.py)) to support my custom `.log` format.
 
-Go through [this](custom_parser_for_lighthouse\README.md) to know how to use my custom parser in lighthouse plugin.
+Go through [this](custom_parser_for_lighthouse/README.md) to know how to use my custom parser in lighthouse plugin.
 
 ## Limitations (if any):
 
